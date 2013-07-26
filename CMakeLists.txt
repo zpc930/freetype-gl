@@ -39,29 +39,35 @@ OPTION(freetype-gl_BUILD_DEMOS "Build the freetype-gl example programs" ON)
 # Get required and optional library
 FIND_PACKAGE( OpenGL REQUIRED )
 IF( WIN32 OR WIN64 )
-	SET( WINDOWS_DIR
-         ${CMAKE_CURRENT_SOURCE_DIR}/windows )
-	SET( GLUT_INCLUDE_DIR
+    SET( WINDOWS_DIR
+    	 ${CMAKE_CURRENT_SOURCE_DIR}/windows )
+
+    SET( GLUT_INCLUDE_DIRS
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/glut )
-	SET( GLUT_LIBRARY
+    SET( GLUT_LIBRARY
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/glut/glut32.lib )
-    SET( GLEW_INCLUDE_DIR
+
+    SET( GLEW_INCLUDE_DIRS
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/glew/include )
     SET( GLEW_LIBRARY
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/glew/lib/glew32.lib )
-	SET( FREETYPE_INCLUDE_DIR_ft2build
+
+    SET( FREETYPE_INCLUDE_DIR_ft2build
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/freetype )
-	SET( FREETYPE_INCLUDE_DIR_freetype2
+    SET( FREETYPE_INCLUDE_DIR_freetype2
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/freetype/freetype )
-	SET( FREETYPE_LIBRARY
+    SET( FREETYPE_LIBRARY
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/freetype/freetype.lib )
-	SET( ANT_TWEAK_BAR_INCLUDE_PATH
+
+    SET( ANT_TWEAK_BAR_INCLUDE_PATH
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/AntTweakBar/include )
-	SET( ANT_TWEAK_BAR_LIBRARY
+    SET( ANT_TWEAK_BAR_LIBRARY
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/AntTweakBar/lib/AntTweakBar.lib )
+    SET( ANT_TWEAK_BAR_FOUND "YES" )
+
     SET( VS789FIX_INCLUDE_DIR
          ${CMAKE_CURRENT_SOURCE_DIR}/windows/include )
-    SET( ANT_TWEAK_BAR_FOUND "YES" )
+
 ELSE( WIN32 OR WIN64 )
     FIND_PACKAGE( GLUT REQUIRED )
     FIND_PACKAGE( Freetype REQUIRED )
