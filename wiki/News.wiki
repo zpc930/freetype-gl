@@ -1,6 +1,11 @@
 #summary News
 #labels Featured
 
+
+=== September 30, 2013 ===
+
+Freetype-gl code is now hosted on github: https://github.com/rougier/freetype-gl
+
 === May 2, 2013 ===
 
 I published a paper on higher quality text :
